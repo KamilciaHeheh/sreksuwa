@@ -19,7 +19,7 @@ body {
     border: 8px solid #f3f3f3;
     border-top: 8px solid #3498db;
     border-radius: 50%;
-    animation: spin 6s linear infinite; /* Animacja obracania */
+    animation: spin 12s linear infinite; /* Animacja obracania */
 }
 
 @keyframes spin {
