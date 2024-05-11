@@ -4,5 +4,15 @@ document.addEventListener("DOMContentLoaded", function() {
     // Pokazujemy loader po 5 sekundach
     setTimeout(function() {
         loaderContainer.style.display = 'block';
+        .loader {
+    width: 100px;
+    height: 100px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin: auto; /* Centrowanie kółka ładowania */
+}
+
     }, 5000);
 });
