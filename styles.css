@@ -17,7 +17,7 @@ body {
     border: 8px solid #f3f3f3;
     border-top: 8px solid #3498db;
     border-radius: 50%;
-    animation: spin 2s linear infinite; /* Animacja obracania */
+    animation: spin 5s linear infinite; /* Animacja obracania */
     margin: 0 auto;
 }
 
