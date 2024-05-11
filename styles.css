@@ -17,16 +17,16 @@ body {
     border: 8px solid #f3f3f3;
     border-top: 8px solid #3498db;
     border-radius: 50%;
-    animation: spin 0.3s linear infinite; /* Zmieniona animacja obracania */
+    animation: spin 2s linear infinite; /* Animacja obracania */
     margin: 0 auto;
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+.loading-text {
+    margin-top: 20px;
+    font-size: 18px;
 }
 
+.content {
+    text-align: center;
+    padding: 20px;
+}
