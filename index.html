@@ -3,57 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wybór Produktów dla Zwierząt</title>
+    <title>Sklep ze zwierzętami</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        .products {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-        .product {
-            border: 1px solid #ccc;
+        .header {
+            background-color: #2f855a;
+            color: white;
             padding: 20px;
-            border-radius: 10px;
-            width: 30%;
+            text-align: center;
         }
-        .product img {
-            width: 100%;
+        .main-banner {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .main-banner img {
+            max-width: 100%;
             height: auto;
         }
-        .product button {
+        .categories {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .category {
+            margin: 0 10px;
+            text-align: center;
+        }
+        .category img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .category p {
             margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <h1>Dzień dobry, co dziś wybierzemy?</h1>
-    <div class="products">
-        <div class="product" data-product="Karma dla psa">
-            <img src="dog_food.jpg" alt="Karma dla psa">
-            <p>Karma dla psa</p>
-            <button>Wybierz</button>
+    <div class="header">
+        <h1>Sklep ze zwierzętami</h1>
+    </div>
+    <div class="main-banner">
+        <img src="banner.jpg" alt="Baner sklepu">
+        <h2>Oferty, które sprawiają radość</h2>
+        <button onclick="window.location.href='#'">Dowiedz się więcej</button>
+    </div>
+    <div class="categories">
+        <div class="category" data-product="Pies">
+            <img src="dog.jpg" alt="Pies">
+            <p>Pies</p>
+            <button onclick="selectProduct('Pies')">Wybierz</button>
         </div>
-        <div class="product" data-product="Karma dla kota">
-            <img src="cat_food.jpg" alt="Karma dla kota">
-            <p>Karma dla kota</p>
-            <button>Wybierz</button>
+        <div class="category" data-product="Kot">
+            <img src="cat.jpg" alt="Kot">
+            <p>Kot</p>
+            <button onclick="selectProduct('Kot')">Wybierz</button>
         </div>
-        <div class="product" data-product="Zabawki dla zwierząt">
-            <img src="pet_toys.jpg" alt="Zabawki dla zwierząt">
-            <p>Zabawki dla zwierząt</p>
-            <button>Wybierz</button>
+        <div class="category" data-product="Małe zwierzęta">
+            <img src="small_animals.jpg" alt="Małe zwierzęta">
+            <p>Małe zwierzęta</p>
+            <button onclick="selectProduct('Małe zwierzęta')">Wybierz</button>
         </div>
+        <!-- Dodaj więcej kategorii według potrzeb -->
     </div>
     <script src="script.js"></script>
 </body>
