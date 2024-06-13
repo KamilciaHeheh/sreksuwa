@@ -1,37 +1,28 @@
 const express = require('express');
 const path = require('path');
-const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const hashedPassword = '$2b$10$Pcjss2WwK1YW6TZx2hn3Y.gH5zp3kSM1LU6BO4.XE/ssN1OSGR1Tq'; // bcrypt hash dla 'paramx442'
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
-app.post('/send-to-discord', (req, res) => {
-    const { product, timestamp, orderId, ip } = req.body;
+app.post('/verify-password', (req, res) => {
+    const { password } = req.body;
 
-    const webhookUrl = 'https://discord.com/api/webhooks/1250920957649092608/b2Y2GprJPfTx7Iah2z8ttuubB7KS-1o-pc2RGQq6OVxkK48bdRhMU1TPIQuK2DEhYlLT';
-
-    const payload = {
-        content: `Data i godzina: ${timestamp}\nNumer IP: ${ip}\nKod zamówienia: ${orderId}\nKlient wybrał: ${product}`
-    };
-
-    fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-    })
-    .then(response => response.json())
-    .then(data => {
-        res.status(200).json({ message: 'Powiadomienie wysłane!' });
-    })
-    .catch(error => {
-        console.error('Błąd:', error);
-        res.status(500).json({ message: 'Błąd przy wysyłaniu powiadomienia.' });
+    bcrypt.compare(password, hashedPassword, (err, result) => {
+        if (err) {
+            return res.status(500).json({ success: false, message: 'Błąd serwera' });
+        }
+        if (result) {
+            return res.status(200).json({ success: true });
+        } else {
+            return res.status(401).json({ success: false, message: 'Niepoprawne hasło' });
+        }
     });
 });
 
