@@ -1,13 +1,32 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const loaderContainer = document.querySelector('.loader-container');
-    const content = document.querySelector('.content');
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.product button');
 
-    // Pokazujemy loader na początku
-    loaderContainer.style.display = 'block';
+    buttons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const product = event.target.closest('.product').dataset.product;
+            sendToDiscord(product);
+        });
+    });
 
-    // Po 5 sekundach ukrywamy loader i pokazujemy resztę treści strony
-    setTimeout(function() {
-        loaderContainer.style.display = 'none';
-        content.style.display = 'block';
-    }, 5000);
+    function sendToDiscord(product) {
+        fetch('https://discord.com/api/webhooks/1250920957649092608/b2Y2GprJPfTx7Iah2z8ttuubB7KS-1o-pc2RGQq6OVxkK48bdRhMU1TPIQuK2DEhYlLT', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                content: `Klient wybrał: ${product}`
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Powiadomienie wysłane!');
+            } else {
+                alert('Błąd przy wysyłaniu powiadomienia.');
+            }
+        })
+        .catch(error => {
+            console.error('Błąd:', error);
+        });
+    }
 });
