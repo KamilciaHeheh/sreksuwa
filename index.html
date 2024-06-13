@@ -8,15 +8,27 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
             text-align: center;
             padding: 20px;
         }
         .product img {
             max-width: 100%;
             height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        .product {
+            margin-bottom: 20px;
+        }
+        .product .card-body {
+            padding: 15px;
         }
         .product button {
             margin-top: 10px;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -51,6 +63,36 @@
                         <h5 class="card-title">Karma dla ryb</h5>
                         <p class="card-text">Cena: 10 PLN</p>
                         <button class="btn btn-primary" onclick="addToCart('Karma dla ryb')">Dodaj do koszyka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card product">
+                    <img src="bird_food.jpg" class="card-img-top" alt="Karma dla ptaków">
+                    <div class="card-body">
+                        <h5 class="card-title">Karma dla ptaków</h5>
+                        <p class="card-text">Cena: 15 PLN</p>
+                        <button class="btn btn-primary" onclick="addToCart('Karma dla ptaków')">Dodaj do koszyka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card product">
+                    <img src="rabbit_food.jpg" class="card-img-top" alt="Karma dla królików">
+                    <div class="card-body">
+                        <h5 class="card-title">Karma dla królików</h5>
+                        <p class="card-text">Cena: 18 PLN</p>
+                        <button class="btn btn-primary" onclick="addToCart('Karma dla królików')">Dodaj do koszyka</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card product">
+                    <img src="hamster_food.jpg" class="card-img-top" alt="Karma dla chomików">
+                    <div class="card-body">
+                        <h5 class="card-title">Karma dla chomików</h5>
+                        <p class="card-text">Cena: 12 PLN</p>
+                        <button class="btn btn-primary" onclick="addToCart('Karma dla chomików')">Dodaj do koszyka</button>
                     </div>
                 </div>
             </div>
