@@ -1,23 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading Animation</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Wybór Produktów dla Zwierzaka</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .products {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .product img {
+            max-width: 100px;
+        }
+        .product button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-    <div class="loader-container">
-        <div class="loader"></div>
-        <div class="loading-text">PROSZE CZEKAĆ</div>
+    <h1>Dzień dobry, co dziś wybierzemy?</h1>
+    <div class="products">
+        <div class="product">
+            <h2>Karma dla psa</h2>
+            <img src="dog_food.jpg" alt="Karma dla psa">
+            <p>Cena: 20 PLN</p>
+            <button onclick="addToCart('Karma dla psa')">Dodaj do koszyka</button>
+        </div>
+        <div class="product">
+            <h2>Karma dla kota</h2>
+            <img src="cat_food.jpg" alt="Karma dla kota">
+            <p>Cena: 25 PLN</p>
+            <button onclick="addToCart('Karma dla kota')">Dodaj do koszyka</button>
+        </div>
+        <div class="product">
+            <h2>Karma dla ryb</h2>
+            <img src="fish_food.jpg" alt="Karma dla ryb">
+            <p>Cena: 10 PLN</p>
+            <button onclick="addToCart('Karma dla ryb')">Dodaj do koszyka</button>
+        </div>
     </div>
-
-    <!-- Treść strony (możesz dodać więcej elementów tutaj) -->
-    <div class="content" style="display: none;">
-        <h1>Witaj na stronie!</h1>
-        <p>To jest przykładowa treść strony.</p>
-    </div>
-
-    <script src="script.js"></script>
+    <script>
+        function addToCart(product) {
+            alert(product + " został dodany do koszyka.");
+            // Tu można dodać kod, który wysyła informacje do backendu
+        }
+    </script>
 </body>
 </html>
