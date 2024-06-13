@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sklep ze zwierzętami</title>
+    <title>Strona z kotkami</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,68 +11,57 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-        .header {
-            background-color: #2f855a;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .main-banner {
-            text-align: center;
-            padding: 20px;
-            background-color: #fff;
-        }
-        .main-banner img {
-            max-width: 100%;
-            height: auto;
-        }
-        .categories {
+        .login-container {
             display: flex;
             justify-content: center;
-            padding: 20px;
-            background-color: #fff;
+            align-items: center;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
         }
-        .category {
-            margin: 0 10px;
+        .login-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
             text-align: center;
         }
-        .category img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
+        .login-box input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
         }
-        .category p {
-            margin-top: 10px;
-            font-size: 14px;
+        .content {
+            filter: blur(10px);
+            transition: filter 0.5s ease;
+            display: none;
+        }
+        .content.active {
+            filter: blur(0);
+            display: block;
+        }
+        .gallery img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Sklep ze zwierzętami</h1>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Wprowadź hasło</h2>
+            <input type="password" id="password" placeholder="Hasło">
+            <button onclick="verifyPassword()">Zaloguj się</button>
+            <p id="error-message" style="color: red; display: none;">Niepoprawne hasło</p>
+        </div>
     </div>
-    <div class="main-banner">
-        <img src="banner.jpg" alt="Baner sklepu">
-        <h2>Oferty, które sprawiają radość</h2>
-        <button onclick="window.location.href='#'">Dowiedz się więcej</button>
-    </div>
-    <div class="categories">
-        <div class="category" data-product="Pies">
-            <img src="dog.jpg" alt="Pies">
-            <p>Pies</p>
-            <button onclick="selectProduct('Pies')">Wybierz</button>
+    <div class="content" id="content">
+        <h1>Kotki</h1>
+        <div class="gallery">
+            <img src="cat1.jpg" alt="Kot 1">
+            <img src="cat2.jpg" alt="Kot 2">
+            <img src="cat3.jpg" alt="Kot 3">
+            <!-- Dodaj więcej zdjęć kotów tutaj -->
         </div>
-        <div class="category" data-product="Kot">
-            <img src="cat.jpg" alt="Kot">
-            <p>Kot</p>
-            <button onclick="selectProduct('Kot')">Wybierz</button>
-        </div>
-        <div class="category" data-product="Małe zwierzęta">
-            <img src="small_animals.jpg" alt="Małe zwierzęta">
-            <p>Małe zwierzęta</p>
-            <button onclick="selectProduct('Małe zwierzęta')">Wybierz</button>
-        </div>
-        <!-- Dodaj więcej kategorii według potrzeb -->
     </div>
     <script src="script.js"></script>
 </body>
