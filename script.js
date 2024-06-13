@@ -1,31 +1,21 @@
-function selectProduct(product) {
-    const timestamp = new Date().toISOString();
-    const orderId = `#${Math.floor(Math.random() * 9000000) + 1000000}`;
-    
-    fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
-            const ip = data.ip;
-            sendToDiscord(product, timestamp, orderId, ip);
-        });
-}
+function verifyPassword() {
+    const password = document.getElementById('password').value;
 
-function sendToDiscord(product, timestamp, orderId, ip) {
-    fetch('/send-to-discord', {
+    fetch('/verify-password', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            product,
-            timestamp,
-            orderId,
-            ip
-        })
+        body: JSON.stringify({ password })
     })
     .then(response => response.json())
     .then(data => {
-        alert(data.message);
+        if (data.success) {
+            document.getElementById('content').classList.add('active');
+            document.querySelector('.login-container').style.display = 'none';
+        } else {
+            document.getElementById('error-message').style.display = 'block';
+        }
     })
     .catch(error => {
         console.error('Błąd:', error);
