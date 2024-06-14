@@ -21,6 +21,8 @@ body {
 }
 
 .icon img {
+    width: 100px;
+    height: 100px;
     background-color: green;
     border-radius: 10px;
     transition: background-color 0.3s ease;
@@ -28,4 +30,6 @@ body {
 
 .icon .status {
     margin-top: 10px;
+    color: green;
+    transition: color 0.3s ease;
 }
