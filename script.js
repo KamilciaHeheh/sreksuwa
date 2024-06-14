@@ -1,12 +1,12 @@
-const correctPassword = 'paramx442';
-
-function verifyPassword() {
-    const password = document.getElementById('password').value;
-
-    if (password === correctPassword) {
-        document.getElementById('content').classList.add('active');
-        document.querySelector('.login-container').style.display = 'none';
+function handleClick(element) {
+    const img = element.querySelector('img');
+    const status = element.querySelector('.status');
+    
+    if (img.style.backgroundColor === 'green') {
+        img.style.backgroundColor = 'red';
+        status.textContent = 'A231 AWARIA';
     } else {
-        document.getElementById('error-message').style.display = 'block';
+        img.style.backgroundColor = 'green';
+        status.textContent = 'Gokart';
     }
 }
