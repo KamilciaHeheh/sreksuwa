@@ -3,79 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zagadki Kryminalne</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-            background: linear-gradient(135deg, #007bff, #6c5ce7);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        h1 {
-            color: #fff;
-            margin-bottom: 20px;
-        }
-        /* Styl pola tekstowego */
-        .input-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-        input[type="text"] {
-            padding: 12px 24px;
-            font-size: 18px;
-            border: 2px solid #ccc;
-            border-radius: 30px; /* Zaokrąglenie kształtu */
-            text-align: center;
-            transition: border-color 0.3s;
-            width: 250px;
-            background-color: #fff; /* Tło pola tekstowego */
-        }
-        /* Styl przycisku */
-        button {
-            padding: 12px 24px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            text-align: center;
-            color: #fff;
-            background-color: #6c5ce7;
-            border: 2px solid #6c5ce7;
-            border-radius: 30px; /* Zaokrąglenie kształtu */
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-        }
-        button:hover {
-            background-color: #5b47d1;
-            border-color: #5b47d1;
-        }
-    </style>
+    <title>Śledztwo Kryminalne</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Witaj w grze "Zagadki Kryminalne"</h1>
-    <p style="color: #fff;">Wpisz swoje imię, aby rozwiązać zagadkę.</p>
-    <form id="form">
-        <div class="input-wrapper">
-            <input type="text" id="name" name="name" placeholder="Wpisz swoje imię" required>
-        </div>
-        <button type="submit">Sprawdź</button>
-    </form>
+    <div class="container">
+        <header>
+            <h1>Śledztwo Kryminalne - Akt I</h1>
+            <h2>Odkryj Dowody</h2>
+            <form id="evidenceForm">
+                <label>
+                    <input type="checkbox" name="evidence" value="metalowy_pret"> Metalowy pręt: Z krwią ofiary
+                </label><br>
+                <label>
+                    <input type="checkbox" name="evidence" value="telefon_komorkowy"> Telefon komórkowy: Telefon ofiary
+                </label><br>
+                <label>
+                    <input type="checkbox" name="evidence" value="zmiete_notatki"> Zmięte notatki: Notatki zawierające emocjonalną wiadomość
+                </label><br>
+                <label>
+                    <input type="checkbox" name="evidence" value="wszystkie"> Wszystkie powyższe
+                </label><br><br>
+                <button type="button" onclick="submitEvidence()">Wybierz Dowody</button>
+            </form>
+        </header>
+        <section id="actIII" style="display: none;">
+            <h2>Akt III. Wiadomość tekstowa z notatki z interwencji Policji</h2>
+            <p>Na telefonie ofiary odnajdujesz wiadomość tekstową na godzinę przed śmiercią. Wiadomość wygląda na pilną i emocjonalną!</p>
+            <blockquote>
+                "Musimy porozmawiać! Wiem, że to ty kręcisz wały! Mam dowody. Spotkaj się ze mną w magazynie, inaczej powiem wszystkim! Nie mogę dłużej czekać... O <span id="meetingTime"></span> na ulicy Północnej w Magazynie!"
+            </blockquote>
+        </section>
+        <section id="policeNotes" style="display: none;">
+            <h2>Notatki z interwencji Policji</h2>
+            <p>Notatki z interwencji Policji potwierdzają:</p>
+            <ul>
+                <li>Anonimowe zgłoszenie o hałasie i podejrzanym ruchu w magazynie.</li>
+                <li>Przybycie funkcjonariuszy na miejsce zdarzenia o 21:30.</li>
+                <li>Znalezienie ciała mężczyzny z rozbitą głową.</li>
+                <li>Znalezienie metalowego pręta z krwią, telefonu komórkowego oraz zmiętych notatek.</li>
+            </ul>
+        </section>
+        <section id="questions" style="display: none;">
+            <h2>Zadanie:</h2>
+            <p>Na podstawie treści wiadomości i notatek z interwencji Policji odpowiedz na pytania:</p>
+            <ol>
+                <li>Jakie podejrzenia miała ofiara wobec nadawcy wiadomości?</li>
+                <ul id="suspicions">
+                    <li><label><input type="radio" name="suspicion" value="1"> O nadawcy wiadomości nie ma informacji</label></li>
+                    <li><label><input type="radio" name="suspicion" value="2"> Podejrzewał, że nadawca mógł zabić kogoś innego</label></li>
+                    <li><label><input type="radio" name="suspicion" value="3"> Podejrzewał, że nadawca jest zamieszany w nielegalne działania</label></li>
+                    <li><label><input type="radio" name="suspicion" value="4"> Podejrzewał, że nadawca jest jego współpracownikiem</label></li>
+                </ul><br>
+                <li>Co nadawca zamierzał zrobić, jeśli adresat nie pojawi się na spotkaniu?</li>
+                <ul id="actions">
+                    <li><label><input type="radio" name="action" value="1"> Odejść na zawsze</label></li>
+                    <li><label><input type="radio" name="action" value="2"> Powiedzieć wszystkim, kim jest adresat</label></li>
+                    <li><label><input type="radio" name="action" value="3"> Wezwać policję</label></li>
+                    <li><label><input type="radio" name="action" value="4"> Nie ma informacji na ten temat</label></li>
+                </ul><br>
+                <li>Która godzina miała być planowanym spotkaniem?</li>
+                <ul id="meetingTimes">
+                    <li><label><input type="radio" name="meetingTime" value="20"> 20:00</label></li>
+                    <li><label><input type="radio" name="meetingTime" value="21"> 21:00</label></li>
+                    <li><label><input type="radio" name="meetingTime" value="22"> 22:00</label></li>
+                </ul><br>
+                <button type="button" onclick="submitAnswers()">Sprawdź odpowiedzi</button>
+            </ol>
+        </section>
+        <section id="result" style="display: none;">
+            <h2>Wynik:</h2>
+            <p id="resultText"></p>
+        </section>
+    </div>
 
-    <script>
-        document.getElementById('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var name = document.getElementById('name').value.trim();
-            if (name === 'Dariusz Kowalski') {
-                alert('Gratulacje! Rozwiązałeś zagadkę mordercy.');
-            } else {
-                alert('Nieprawidłowe dane. Spróbuj ponownie.');
-            }
-            document.getElementById('name').value = '';
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
