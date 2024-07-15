@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zagadka Mordercy</title>
+    <title>Zagadki Kryminalne</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,31 +13,43 @@
         h1 {
             color: #333;
         }
-        form {
-            margin-top: 30px;
-        }
+        /* Styl pola tekstowego */
         input[type="text"] {
-            padding: 10px;
-            font-size: 16px;
-            width: 200px;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: 2px solid #ccc;
+            border-radius: 30px; /* Zaokrąglenie kształtu */
+            text-align: center;
+            transition: border-color 0.3s;
+            width: 250px;
             margin-right: 10px;
         }
-        input[type="submit"] {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
+        /* Styl przycisku */
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
             color: #fff;
-            border: none;
+            background-color: #007bff;
+            border: 2px solid #007bff;
+            border-radius: 30px; /* Zaokrąglenie kształtu */
             cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>Witaj w grze "Zagadka Mordercy"</h1>
+    <h1>Witaj w grze "Zagadki Kryminalne"</h1>
     <p>Wpisz swoje imię, aby rozwiązać zagadkę.</p>
     <form id="form">
         <input type="text" id="name" name="name" placeholder="Wpisz swoje imię" required>
-        <input type="submit" value="Sprawdź">
+        <button type="submit">Sprawdź</button>
     </form>
 
     <script>
