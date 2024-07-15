@@ -3,24 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ikonki Gokartów</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Zagadka Mordercy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 30px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="icon" onclick="handleClick(this)">
-            <img src="https://via.placeholder.com/100x100?text=Car" alt="Gokart 1">
-            <p class="status">Gokart 1</p>
-        </div>
-        <div class="icon" onclick="handleClick(this)">
-            <img src="https://via.placeholder.com/100x100?text=Car" alt="Gokart 2">
-            <p class="status">Gokart 2</p>
-        </div>
-        <div class="icon" onclick="handleClick(this)">
-            <img src="https://via.placeholder.com/100x100?text=Car" alt="Gokart 3">
-            <p class="status">Gokart 3</p>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <h1>Witaj w grze "Zagadka Mordercy"</h1>
+    <p>Wpisz swoje imię, aby rozwiązać zagadkę.</p>
+    <form id="form">
+        <input type="text" id="name" name="name" placeholder="Wpisz swoje imię" required>
+        <input type="submit" value="Sprawdź">
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value.trim();
+            if (name === 'Dariusz Kowalski') {
+                alert('Gratulacje! Rozwiązałeś zagadkę mordercy.');
+            } else {
+                alert('Nieprawidłowe dane. Spróbuj ponownie.');
+            }
+            document.getElementById('name').value = '';
+        });
+    </script>
 </body>
 </html>
