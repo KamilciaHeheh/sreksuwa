@@ -1,35 +1,63 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
     background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    display: flex;
-    gap: 20px;
-}
-
-.icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-}
-
-.icon img {
-    width: 100px;
-    height: 100px;
-    background-color: green;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
     border-radius: 10px;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.icon .status {
-    margin-top: 10px;
-    color: green;
-    transition: color 0.3s ease;
+header h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+header h2 {
+    color: #555;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4b0082;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #6a5acd;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+blockquote {
+    background-color: #f9f9f9;
+    border-left: 5px solid #4b0082;
+    padding: 10px;
+}
+
+section {
+    margin-top: 20px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
 }
