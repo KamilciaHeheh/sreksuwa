@@ -18,7 +18,7 @@
             position: relative;
             display: inline-block;
         }
-        .input-wrapper input[type="text"] {
+        input[type="text"] {
             padding: 12px 24px;
             font-size: 18px;
             border: 2px solid #ccc;
@@ -27,23 +27,10 @@
             transition: border-color 0.3s;
             width: 250px;
             margin-right: 10px;
-        }
-        .input-wrapper .fake-input {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            padding: 12px 24px;
-            font-size: 18px;
-            border: 2px solid transparent; /* Ukrycie obramowania */
-            border-radius: 30px; /* Zaokrąglenie kształtu */
-            background-color: #fff; /* Tło, które zakrywa prawdziwe pole */
-            pointer-events: none; /* Nie reaguje na zdarzenia myszy */
-            z-index: 1; /* Wysunięcie na wierzch, nad prawdziwym polem */
+            background-color: #fff; /* Tło pola tekstowego */
         }
         /* Styl przycisku */
-        .button {
+        button {
             padding: 12px 24px;
             font-size: 18px;
             font-weight: bold;
@@ -56,7 +43,7 @@
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
-        .button:hover {
+        button:hover {
             background-color: #0056b3;
             border-color: #0056b3;
         }
@@ -68,9 +55,8 @@
     <form id="form">
         <div class="input-wrapper">
             <input type="text" id="name" name="name" placeholder="Wpisz swoje imię" required>
-            <div class="fake-input"></div>
         </div>
-        <button type="submit" class="button">Sprawdź</button>
+        <button type="submit">Sprawdź</button>
     </form>
 
     <script>
