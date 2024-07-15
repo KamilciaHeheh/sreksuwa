@@ -9,14 +9,21 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 50px;
+            background: linear-gradient(135deg, #007bff, #6c5ce7);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         h1 {
-            color: #333;
+            color: #fff;
+            margin-bottom: 20px;
         }
         /* Styl pola tekstowego */
         .input-wrapper {
             position: relative;
             display: inline-block;
+            margin-bottom: 20px;
         }
         input[type="text"] {
             padding: 12px 24px;
@@ -26,7 +33,6 @@
             text-align: center;
             transition: border-color 0.3s;
             width: 250px;
-            margin-right: 10px;
             background-color: #fff; /* Tło pola tekstowego */
         }
         /* Styl przycisku */
@@ -37,21 +43,21 @@
             text-decoration: none;
             text-align: center;
             color: #fff;
-            background-color: #007bff;
-            border: 2px solid #007bff;
+            background-color: #6c5ce7;
+            border: 2px solid #6c5ce7;
             border-radius: 30px; /* Zaokrąglenie kształtu */
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         button:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
+            background-color: #5b47d1;
+            border-color: #5b47d1;
         }
     </style>
 </head>
 <body>
-    <h1>Witaj w grze "Zagadki Kr1yminalne"</h1>
-    <p>Wpisz swoje imię, aby rozwiązać zagadkę.</p>
+    <h1>Witaj w grze "Zagadki Kryminalne"</h1>
+    <p style="color: #fff;">Wpisz swoje imię, aby rozwiązać zagadkę.</p>
     <form id="form">
         <div class="input-wrapper">
             <input type="text" id="name" name="name" placeholder="Wpisz swoje imię" required>
