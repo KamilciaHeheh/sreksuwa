@@ -1,20 +1,3 @@
-function submitEvidence() {
-    var form = document.getElementById("evidenceForm");
-    var selectedEvidence = [];
-    var evidenceInputs = form.querySelectorAll('input[type="checkbox"]:checked');
-
-    evidenceInputs.forEach(function(input) {
-        selectedEvidence.push(input.value);
-    });
-
-    if (selectedEvidence.length === 0) {
-        alert("Wybierz co najmniej jeden dowód!");
-        return;
-    }
-
-    document.getElementById("actIII").style.display = "block";
-}
-
 function submitAnswers() {
     var suspicions = document.getElementsByName("suspicion");
     var actions = document.getElementsByName("action");
@@ -57,10 +40,9 @@ function submitAnswers() {
     var resultText = document.getElementById("resultText");
 
     if (suspicionAnswer === correctSuspicion && actionAnswer === correctAction && meetingTimeAnswer === correctMeetingTime) {
-        resultText.textContent = "Gratulacje! Rozwiązałeś zagadkę prawidłowo!";
+        document.getElementById("actIII").style.display = "block";
     } else {
         resultText.textContent = "Niepoprawne odpowiedzi. Spróbuj ponownie.";
+        document.getElementById("result").style.display = "block";
     }
-
-    document.getElementById("result").style.display = "block";
 }
